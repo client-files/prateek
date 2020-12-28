@@ -31,10 +31,8 @@ WORKDIR /home/andy/app
 COPY . .
 
 RUN pip install --user --upgrade pip \
-    && pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
+    && pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black \
+    && pip install --user -e .
 
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
-
-#RUN pip install --user -e .
-RUN echo $PWD >> /home/andy/here
