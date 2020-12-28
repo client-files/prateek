@@ -1,2 +1,2 @@
 #!/bin/zsh
-docker build -f pydev.Dockerfile -t pydev --no-cache .
+docker build -f {{proj}}.Dockerfile -t {{proj}} --no-cache .

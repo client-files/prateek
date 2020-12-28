@@ -1,7 +1,7 @@
 import setuptools
 
 setuptools.setup(
-  name="plain",
+  name="{{proj}}",
   version="0.0.0",
   description="python project in docker",
   packages=setuptools.find_packages("src"),

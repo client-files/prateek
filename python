@@ -1,2 +1,2 @@
 #!/bin/zsh
-docker run -it --rm --name pydev -v $PWD:$PWD -w $PWD pydev python -u $1
+docker run -it --rm --name {{proj}} -v /app:$PWD -w $PWD {{proj}} python -u $1
