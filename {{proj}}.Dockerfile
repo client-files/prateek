@@ -16,14 +16,14 @@ RUN if ! getent passwd andy; then groupadd -g 1000 andy && useradd -u 1000 -g 10
     && chmod 0440 /etc/sudoers.d/andy \
 	&& apt-get autoremove \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /Users/andy/app \
-    && mkdir -p /Users/andy/data \
-    && chown -R andy /Users/andy
+    && rm -rf /var/lib/apt/lists/*
 
 USER andy
 
-ENV PATH="/Users/andy/.local/bin::${PATH}"
+RUN mkdir -p /Users/andy/app \
+    && mkdir -p /Users/andy/data
+
+ENV PATH="/Users/andy/.local/bin:${PATH}"
 RUN echo 'EXPORT PS1="$ "' >> /Users/andy/.zshrc \
 	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /Users/andy/.zshrc
 
