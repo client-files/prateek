@@ -36,4 +36,5 @@ RUN pip install --user --upgrade pip \
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
 
-RUN pip install --user -e .
+#RUN pip install --user -e .
+RUN python setup.py develop
