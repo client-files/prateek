@@ -6,7 +6,7 @@ RUN apt update && apt install -y \
 		sudo \
 		zsh
 
-# SHELL ["/bin/zsh", "-c"]
+SHELL ["/bin/zsh", "-c"]
 
 RUN if ! getent passwd andy; then groupadd -g 1000 andy && useradd -u 1000 -g 1000 -d /home/andy -m -s /bin/bash andy; fi \
     && echo andy:andy | chpasswd \
@@ -31,8 +31,9 @@ RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
 WORKDIR /app
 COPY . .
 
-RUN python -m pip install --user --upgrade pip
-RUN python -m pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
+RUN python -m pip -V
+RUN python -m pip install --user --upgrade pip \
+    && python -m pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
 
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
