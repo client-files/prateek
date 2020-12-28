@@ -42,4 +42,4 @@ USER root
 RUN chown -R andy /app
 
 USER andy
-RUN python -m pip install --user -e .
+RUN pip install --user -e .
