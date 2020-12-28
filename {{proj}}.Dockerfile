@@ -34,17 +34,7 @@ RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
 
 RUN python -m pip install --user --upgrade pip
-RUN python -m pip install --user \
-	loguru \
-	pysnooper \
-	pytest \
-	pytest-cov \
-	pytest-bdd \
-	tox \
-	mypy \
-	pytest-mock \
-	pre-commit \
-	black
+RUN python -m pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
 
 USER root
 RUN chown -R andy /app
