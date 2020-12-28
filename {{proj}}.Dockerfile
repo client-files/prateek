@@ -24,7 +24,7 @@ RUN mkdir -p /home/andy/app \
     && mkdir -p /home/andy/data
 
 ENV PATH="/home/andy/.local/bin:${PATH}"
-RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
+RUN echo 'export PS1="$ "' >> /home/andy/.zshrc \
 	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /home/andy/.zshrc
 
 WORKDIR /home/andy/app
@@ -36,4 +36,4 @@ RUN pip install --user --upgrade pip \
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
 
-#RUN pip install --user -e .
+RUN pip install --user -e .
