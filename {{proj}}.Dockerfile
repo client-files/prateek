@@ -32,9 +32,9 @@ WORKDIR /app
 COPY . .
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
-USER root
-RUN python -m pip install --upgrade pip
-RUN python -m pip install \
+
+RUN python -m pip install --user --upgrade pip
+RUN python -m pip install --user \
 	loguru \
 	pysnooper \
 	pytest \
@@ -46,6 +46,7 @@ RUN python -m pip install \
 	pre-commit \
 	black
 
+USER root
 RUN chown -R andy /app
 
 USER andy
