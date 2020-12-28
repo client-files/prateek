@@ -37,4 +37,4 @@ RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
 
 #RUN pip install --user -e .
-RUN echo pwd >> /home/andy/here
+RUN echo $PWD >> /home/andy/here
