@@ -32,7 +32,8 @@ WORKDIR /app
 COPY . .
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
-RUN python -m pip install --upgrade pip
+
+
 RUN python -m pip install \
 	loguru \
 	pysnooper \
