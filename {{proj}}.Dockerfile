@@ -20,14 +20,14 @@ RUN if ! getent passwd andy; then groupadd -g 1000 andy && useradd -u 1000 -g 10
 
 USER andy
 
-RUN mkdir -p /Users/andy/app \
-    && mkdir -p /Users/andy/data
+RUN mkdir -p /home/andy/app \
+    && mkdir -p /home/andy/data
 
-ENV PATH="/Users/andy/.local/bin:${PATH}"
-RUN echo 'EXPORT PS1="$ "' >> /Users/andy/.zshrc \
-	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /Users/andy/.zshrc
+ENV PATH="/home/andy/.local/bin:${PATH}"
+RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
+	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /home/andy/.zshrc
 
-WORKDIR /Users/andy/app
+WORKDIR /home/andy/app
 COPY . .
 
 RUN pip install --user --upgrade pip \

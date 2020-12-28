@@ -1,2 +1,2 @@
 #!/bin/zsh
-docker run -it --rm --name {{proj}} -v /Users/andy/app:$PWD -w $PWD {{proj}} /bin/zsh $1
+docker run -it --rm --name {{proj}} -v /home/andy/app:$PWD -w $PWD {{proj}} /bin/zsh $1
