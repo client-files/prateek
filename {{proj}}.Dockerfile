@@ -23,8 +23,8 @@ USER andy
 ENV PATH="/home/andy/.local/bin::${PATH}"
 RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
 	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /home/andy/.zshrc \
-    && mkdir /Users/andy/app \
-    && mkdir /Users/andy/data
+    && mkdir -p /Users/andy/app \
+    && mkdir -p /Users/andy/data
 
 WORKDIR /Users/andy/app
 COPY . .
