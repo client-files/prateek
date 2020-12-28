@@ -46,8 +46,6 @@ RUN python -m pip install \
 	pre-commit \
 	black
 
-
-
 RUN chown -R andy /app
 
 USER andy
