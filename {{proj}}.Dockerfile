@@ -6,7 +6,7 @@ RUN apt update && apt install -y \
 		sudo \
 		zsh
 
-SHELL ["/bin/zsh", "-c"]
+# SHELL ["/bin/zsh", "-c"]
 
 RUN if ! getent passwd andy; then groupadd -g 1000 andy && useradd -u 1000 -g 1000 -d /home/andy -m -s /bin/bash andy; fi \
     && echo andy:andy | chpasswd \
