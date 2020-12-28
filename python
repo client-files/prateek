@@ -1,0 +1,2 @@
+#!/bin/zsh
+docker run -it --rm --name pydev -v $PWD:$PWD -w $PWD pydev python -u $1
