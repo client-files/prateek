@@ -23,9 +23,9 @@ RUN if ! getent passwd andy; then groupadd -g 1000 andy && useradd -u 1000 -g 10
 
 USER andy
 
-ENV PATH="/home/andy/.local/bin::${PATH}"
-RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
-	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /home/andy/.zshrc
+ENV PATH="/Users/andy/.local/bin::${PATH}"
+RUN echo 'EXPORT PS1="$ "' >> /Users/andy/.zshrc \
+	&& echo 'PATH="/home/andy/.local/bin:${PATH}"' >> /Users/andy/.zshrc
 
 WORKDIR /Users/andy/app
 COPY . .
