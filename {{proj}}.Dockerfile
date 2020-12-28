@@ -31,9 +31,9 @@ RUN echo 'EXPORT PS1="$ "' >> /home/andy/.zshrc \
 WORKDIR /app
 COPY . .
 
-RUN python -m pip -V
-RUN python -m pip install --user --upgrade pip \
-    && python -m pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
+RUN pip -V
+RUN pip install --user --upgrade pip \
+    && pip install --user loguru pysnooper pytest pytest-cov pytest-bdd tox mypy pytest-mock pre-commit black
 
 RUN git config --global user.email "akmiles@icloud.com" \
 	&& git config --global user.name "Andy Miles"
