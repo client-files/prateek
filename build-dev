@@ -1,2 +1,2 @@
 #!/bin/zsh
-docker build -f {{proj}}.Dockerfile -t {{proj}} --no-cache .
+docker build -f prateek.Dockerfile -t prateek --no-cache .
